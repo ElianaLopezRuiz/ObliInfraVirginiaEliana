@@ -4,8 +4,8 @@
 
 int array1[5] = {1, 2, 3, 4, 5};
 int array2[5] = {1, 2, 3, 4, 5};
-int resultados[5]; //guardamos resultados intermedios
-int resueltadoFinal;
+int resultados[4];
+int resultadoFinal;
 
 
 //Hilos 1,2 y 3: sumamos posiciones 1,2 y 3 de array1 y array2
@@ -29,9 +29,9 @@ void* multiplicar_elementos(void* arg) {
  
 //Hilo 5
 void* sumar_final(void* arg) {
-    resultados[4] = resultados[3] + array1[4] + array2[4];
-    printf("Hilo 5: %d + %d + %d = %d\n", resultados[3], array1[4], array2[4], resultados[4]);
-    printf("Resultado final: %d\n", resultados[4]);
+    resultadoFinal = resultados[3] + array1[4] + array2[4];
+    printf("Hilo 5: %d + %d + %d = %d\n", resultados[3], array1[4], array2[4], resultadoFinal);
+    printf("Resultado final: %d\n", resultadoFinal);
     return NULL;
 }
 
